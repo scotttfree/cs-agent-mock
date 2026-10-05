@@ -1,0 +1,61 @@
+{
+  "skill_name": "idea-stress-test",
+  "evals": [
+    {
+      "id": 1,
+      "name": "vague-one-liner",
+      "prompt": "Stress test this: an AI tool that helps publishers make more money.",
+      "expected_output": "Restates what little is known, then asks 2-3 sharp, forced-choice questions (which publisher segment, what mechanism of 'more money' — yield/floors, direct sales, subscriptions, curation — and who pays / how it monetises). Does not invent a full business and critique it. May offer a labelled guess at the most promising version for the user to confirm.",
+      "expectations": [
+        "Asks no more than 3 questions",
+        "Questions are specific and force a choice rather than open-ended 'tell me more'",
+        "Does not produce the full stress-test template with an invented business model",
+        "Any guessed version is explicitly labelled as an assumption"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "inflated-top-down-tam",
+      "prompt": "Would you invest? CurateIQ is a self-serve curation platform for mid-size publishers. Publishers upload first-party audience segments, we package them into curated deals and push them to DSPs, taking a 10% rev share on curated spend. Programmatic display spend is $200bn globally, so if we capture just 1% of the curation layer we're a $2bn business. Team: me (10 years ad tech PM) and one engineer. We want to raise a $2M seed.",
+      "expected_output": "Full stress test in the specified header order. Market section explicitly rejects the '1% of $200bn' framing, rebuilds bottom-up (number of mid-size publishers × curated spend per publisher × 10% take), shows arithmetic and assumptions, and states the gap as a ratio. Addresses who captures value (SSPs already offer curation), platform competition, sales cycle, and founder-market fit (strong network, small team). Cites current sources for competitors/market where facts matter. Ends with a verdict, conviction, what would change it, and three 2-week experiments with numeric pass/fail thresholds.",
+      "expectations": [
+        "Headers appear in order: idea, riskiest assumptions table, stress test, steelman/kill, verdict, de-risking plan, partner questions",
+        "Assumption table labels items Fact / Belief / Hope with impact and uncertainty",
+        "Rebuilds market size bottom-up with visible arithmetic",
+        "Explicitly quantifies the gap versus the $2bn top-down claim",
+        "Names SSP-led curation or large platforms as competitive threat",
+        "Verdict is one of Pursue/Pivot/Park/Kill with conviction level and a change-my-mind condition",
+        "Each of three experiments has who, what, numeric pass/fail threshold and cost",
+        "Uses web search or clearly flags figures from memory"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "consumer-habit-tracker",
+      "prompt": "Tear this apart: a habit-tracking app for people in their 30s that uses streaks and a weekly AI coach check-in. $4.99/month subscription. I'd build it myself on weekends and market it on TikTok and Instagram.",
+      "expected_output": "Full stress test that hammers distribution (crowded app-store category, CAC for paid social vs organic, founder has no existing consumer audience), retention (habit-app churn, what brings users back after novelty fades, D1/D7/D30 targets), and willingness to pay (free alternatives, low install-to-paid conversion, app-store fees). Does the install-to-revenue arithmetic. Is honest that ad-tech background is limited founder-market fit for consumer, aside from paid-acquisition literacy. Likely Park or Kill unless a distribution edge exists, with capital-light experiments (fake door, concierge, pre-sale).",
+      "expectations": [
+        "Distribution section quantifies CAC or installs needed for a revenue target",
+        "Retention is treated as a top risk with numeric thresholds",
+        "Willingness to pay addresses free alternatives and conversion rates",
+        "Founder-market fit is assessed honestly rather than flattered",
+        "Experiments are capital-light and runnable in 2 weeks",
+        "No generic advice like 'talk to users' without specifying who and what to ask"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "follow-up-mixed-rebuttal",
+      "prompt": "[Follow-up after eval 2's critique] Two pushbacks. First, on SSP competition: I've confirmed with 6 mid-size publishers I've worked with that their SSPs charge an extra 5-10% curation fee on top of the existing take rate and they only get access to it if they exceed a spend minimum most of them don't hit — so they're locked out today. Second, on distribution: I don't think CAC will be a problem because the product is really good and publishers will tell each other about it.",
+      "expected_output": "Does not regenerate the full template. Uses the follow-up format. Concedes the first point (specific, evidenced from 6 publishers, identifies an underserved segment), updates the relevant assumption label (e.g. Hope -> Belief), and says whether it moves the verdict. Holds firm on the second point (word of mouth asserted without evidence; publisher networks are small and B2B referral loops are slow), explains why, and states what evidence would change its mind. Proposes the single most useful next experiment.",
+      "expectations": [
+        "Uses the follow-up format rather than restarting the full stress test",
+        "Explicitly concedes the SSP/curation access point",
+        "Updates an assumption label as a result of the concession",
+        "Explicitly holds the line on the word-of-mouth CAC argument with reasoning",
+        "States what evidence would change its mind on distribution",
+        "Says whether the verdict changes"
+      ]
+    }
+  ]
+}
